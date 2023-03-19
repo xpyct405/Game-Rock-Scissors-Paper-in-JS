@@ -17,6 +17,7 @@ for (let i = 0; i < optional.length; i++) {
         // В самом начале в каждой итерации заменяются значки компьютера и юзера на rock.png
         userResult.src = gptResult.src = './img/rock.png'
 
+        // После клика по любому элементу появляется надпись
         result.textContent = `Wait for it`
 
         // При клике по любому элементу сработает начало анимации (тряска кулаками)
@@ -67,8 +68,9 @@ for (let i = 0; i < optional.length; i++) {
             let outComeValue  = outComes[userValue + gptValue];
             console.log(outComeValue);
 
-            console.log(result.innerHTML);
+            // Резулььтат выводим
             result.innerHTML = userValue === gptValue ? "Match Draw!" : `${outComeValue} Won!`
+            console.log(result.innerHTML);
             }, 3000)
     })
 }
