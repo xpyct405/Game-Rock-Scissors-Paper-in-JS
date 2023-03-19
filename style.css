@@ -10,7 +10,8 @@ body {
     justify-content: center;
     align-items:center;
     height: 100vh;
-    font-family: arial, helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(127, 55, 194);
 }
 
 .container {
@@ -20,39 +21,55 @@ body {
     text-align: center;
     justify-content: center;
     background-color: #fff;
-    max-width: 600px;
-    padding: 20px;
+    max-width: 660px;
+    min-width:540px;
+    padding: 30px;
+    border-radius: 10px;
 }
 .header {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 32px;
 }
 .game-result {
     display: flex;
     flex-direction: row;
-    gap: 100px;
     margin-top: 50px;
+    width: 100%;
 }
 
+.result-item {
+    width: 50%;
+}
 .result-item p{
+    font-weight: bold;
+    font-size: 20px;
     margin-top: 15px;
 }
 .result-item.user img {
-    transform: scaleX(-1);
+    transform:  rotate(90deg) rotateY(180deg);
+}
+.result-item.gpt img {
+    transform:  rotate(270deg) rotateY(0deg);
 }
 .result-text {
     margin-top: 30px;
 }
+.your-choose{
+    margin-top: 30px;
+}
 .optional {
+    width: 100%;
     display: flex;
-    margin-top: 50px;
-    gap: 40px;
+    margin-top: 20px;
+    justify-content: space-around;
+}
+.optional-item {
+    width: 33%;
 }
 .optional-item img {
     cursor: pointer;
     max-width: 120px;
     opacity: .7;
-    transform: scaleX(-1);
 }
 .user-optional:hover {
     opacity: 1;
@@ -62,4 +79,25 @@ body {
 }
 .optional-item p {
     margin-top: 15px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+/* АНИМАЦИЯ start-animation */
+.container.start-animation .user-result_item {
+    animation: userShake 1s ease infinite;
+}
+@keyframes userShake {
+    50% {
+        transform: rotate(105deg) rotateY(180deg);
+    }
+}
+.container.start-animation .gpt-result_item {
+    animation: gptShake 1s ease infinite;
+}
+@keyframes gptShake {
+    50% {
+        transform: rotate(255deg);
+    }
 }
